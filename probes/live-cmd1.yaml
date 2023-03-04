@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: httpd-pod-cmd-4
+  labels:
+    app: httpd-web
+spec: 
+  containers:
+  - name: httpd
+    image: httpd
+    ports:
+    - containerPort: 80
+    command:
+      - /bin/sh
+      - c
+      - mkdir -p /tmp/test/devops
+    livenessProbe:
+      exec:
+        command:
+        - ls
+        - /tmp/test/devops

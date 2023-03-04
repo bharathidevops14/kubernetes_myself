@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-command-2
+  labels: 
+    devops: "14"
+spec: 
+  containers:
+  - name: busybox
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo "hello Kubernetes!!" && sleep 3600' ]  

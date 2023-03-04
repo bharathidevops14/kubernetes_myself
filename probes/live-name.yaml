@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: nginx-pod-named-port
+  labels:
+    app: httpd-web
+spec: 
+  containers:
+  - name: httpd
+    image: nginx
+    ports:
+    - containerPort: 80
+      name: devopsport
+    livenessProbe:
+      httpGet:
+        path: /
+        port: devopsport
