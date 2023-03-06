@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment-resource
+  name: nginx-deployment-resource-1
 spec:
   selector:
     matchLabels:
@@ -18,8 +18,8 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            memory: 200Mi
-            cpu: 5M
+            memory: "10Mi"
+            cpu: "1M"
           limits: 
-            memory: 300Mi
-            cpu: 100M
+            memory: "200Mi"
+            cpu: "10M"
